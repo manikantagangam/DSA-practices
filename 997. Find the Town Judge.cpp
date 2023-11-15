@@ -1,23 +1,24 @@
 class Solution
 {
 public:
-    int findJudge(int N, vector<vector<int>> &trust)
+    int findJudge(int n, vector<vector<int>> &trust)
     {
-        vector<int> in(N), out(N);
+        vector<int> in(n), out(n);
+
         for (vector<int> edge : trust)
         {
-            int from = edge[0] - 1, to = edge[1] - 1;
-            out[from]++;
-            in[to]++;
+            int start = edge[0] - 1;
+            int end = edge[1] - 1;
+            out[start]++;
+            in[end]++;
         }
-        for (int i = 0; i < N; i++)
+
+        for (int i = 0; i < n; i++)
         {
-            if (in[i] == N - 1 && out[i] == 0)
-            {
-                // 0-based -> 1-based
+            if (in[i] == n - 1 && out[i] == 0)
                 return i + 1;
-            }
         }
+
         return -1;
     }
 };
