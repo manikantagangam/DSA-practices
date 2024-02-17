@@ -38,3 +38,6 @@ int main()
     cout << fractionalKnapsack(W, items, n) << endl;
     return 0;
 }
+
+// Time Complexity: O(nlogn)
+// Space Complexity: O(1)
