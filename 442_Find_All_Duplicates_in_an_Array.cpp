@@ -16,10 +16,7 @@ public:
             {
                 ans.push_back(i);
             }
-            else
-            {
-                nums[i - 1] = -1 * nums[i - 1];
-            }
+            nums[i - 1] = -1 * nums[i - 1];
         }
 
         return ans;
