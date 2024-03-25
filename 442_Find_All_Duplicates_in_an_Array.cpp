@@ -9,15 +9,16 @@ public:
     vector<int> findDuplicates(vector<int> &nums)
     {
         vector<int> ans;
-        for (int i = 0; i < nums.size(); i++)
+        for (int i : nums)
         {
-            if (nums[abs(nums[i]) - 1] < 0)
+            i = abs(i);
+            if (nums[i - 1] < 0)
             {
-                ans.push_back(abs(nums[i]));
+                ans.push_back(i);
             }
             else
             {
-                nums[abs(nums[i]) - 1] = -1 * nums[abs(nums[i]) - 1];
+                nums[i - 1] = -1 * nums[i - 1];
             }
         }
 
