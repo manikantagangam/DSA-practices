@@ -1,5 +1,5 @@
 
-"\
+/*
 
 Table: Employee
 
@@ -43,7 +43,7 @@ Output:
 +----------+
 Explanation: Joe is the only employee who earns more than his manager.
 
-"
+*/
 
 SELECT
     a.name AS 'Employee'

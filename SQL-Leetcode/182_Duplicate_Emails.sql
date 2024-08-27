@@ -1,4 +1,4 @@
-"
+/*
 
 Table: Person
 
@@ -39,7 +39,7 @@ Output:
 +---------+
 Explanation: a@b.com is repeated two times.
 
-"
+*/
 
 SELECT p.email
 FROM Person p
