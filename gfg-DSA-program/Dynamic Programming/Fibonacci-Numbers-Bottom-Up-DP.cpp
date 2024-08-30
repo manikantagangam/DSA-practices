@@ -28,6 +28,6 @@ int main()
     int number;
     cin >> number;
     Solution obj;
-    cout << obj.findNthFjsonibonacci(number) << endl;
+    cout << obj.findNthFibonacci(number) << endl;
     return 0;
 }
