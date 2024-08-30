@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution
@@ -27,7 +29,12 @@ int main()
 {
     int number;
     cin >> number;
-    long long int dp[number + 1] = {0};
+
+    long long int dp[number + 1];
+    for (int i = 0; i <= number; i++)
+    {
+        dp[i] = 0;
+    }
     Solution obj;
     cout << obj.findNthFibonacci(number, dp) << endl;
     return 0;
