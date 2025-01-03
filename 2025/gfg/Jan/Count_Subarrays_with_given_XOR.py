@@ -41,3 +41,21 @@
         
 #         return ans
 
+# O(n)
+
+from collections import defaultdict
+class Solution:
+    def subarrayXor(self, arr, k):
+        # code here
+        xr = 0
+        d = defaultdict(int)
+        d[xr] = 1
+        ans = 0
+        
+        for i in range(len(arr)):
+            xr = xr^arr[i]
+            x = xr ^ k
+            ans += d[x]
+            d[xr] += 1
+        
+        return ans
