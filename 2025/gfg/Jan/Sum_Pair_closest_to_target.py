@@ -23,4 +23,29 @@ Output: []
 Explanation: As the input array has only 1 element, return an empty array.
 
 """
+import math
 
+class Solution:
+    def sumClosest(self, arr, target):
+        # code here
+        arr.sort()
+        ans = []
+        l = 0
+        r = len(arr)-1
+        diff= math.inf
+        
+        while(l<r):
+            sum = arr[l]+arr[r]
+            
+            if(abs(target-sum) < diff):
+                diff = abs(target-sum)
+                ans=[arr[l], arr[r]]
+            
+            if sum < target:
+                l+=1
+            elif sum > target:
+                r-=1
+            
+            else:
+                return ans
+        return ans
