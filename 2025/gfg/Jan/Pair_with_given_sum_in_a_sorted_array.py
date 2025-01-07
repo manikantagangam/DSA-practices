@@ -32,3 +32,41 @@ class Solution:
 
 """
 
+class Solution:
+    def countPairs(self, arr, target):
+        ans = 0
+        st = 0
+        end = len(arr) - 1
+        
+        # Sort the array to use two-pointer technique
+        arr.sort()
+        
+        while st < end:
+            curr_sum = arr[st] + arr[end]
+            
+            if curr_sum > target:
+                end -= 1
+            elif curr_sum < target:
+                st += 1
+            else:
+                e1 = arr[st]
+                e2 = arr[end]
+                c1 = c2 = 0
+                
+                # Count occurrences of e1
+                while st <= end and arr[st] == e1:
+                    st += 1
+                    c1 += 1
+                
+                # Count occurrences of e2
+                while st <= end and arr[end] == e2:
+                    end -= 1
+                    c2 += 1
+                
+                # If e1 == e2, count pairs in the form of combinations
+                if e1 == e2:
+                    ans += (c1 * (c1 - 1)) // 2
+                else:
+                    ans += c1 * c2
+        
+        return ans
