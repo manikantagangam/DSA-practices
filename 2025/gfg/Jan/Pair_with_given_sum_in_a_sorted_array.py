@@ -18,4 +18,17 @@ Input: arr[] = [-1, 10, 10, 12, 15], target = 125
 Output: 0
 Explanation: There is no such pair which sums up to 4.
 
+Brute Force Implementation O(N^2)
+
+class Solution:
+    def countPairs (self, arr, target) : 
+        ans = 0
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                if(i!=j):
+                    if(arr[i] + arr[j] == target):
+                        ans+=1
+        return int(ans/2)
+
 """
+
