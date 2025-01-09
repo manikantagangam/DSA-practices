@@ -30,18 +30,16 @@ Explanation: There is no subarray with sum 2.
 
 class Solution:
     def subarraySum(self, arr, target):
-        s, e = 0, 0
-        res = []
-        curr = 0
-        for i in range(len(arr)):
-            curr += arr[i]
-            if curr >= target:
-                e = i
-                while curr > target and s < e:
-                    curr -= arr[s]
-                    s += 1
-                    if curr == target:
-                        res.append(s + 1)
-                        res.append(e + 1)
-                        return res
+        s, curr = 0, 0
+        
+        for e in range(len(arr)):
+            curr += arr[e]
+            
+            while curr > target and s <= e:
+                curr -= arr[s]
+                s += 1
+            
+            if curr == target:
+                return [s + 1, e + 1]
+
         return [-1]
