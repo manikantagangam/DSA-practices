@@ -1,3 +1,7 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
 class Solution
 {
 public:
@@ -14,3 +18,10 @@ public:
         return true;
     }
 };
+
+int main()
+{
+    vector<int> v = {2, 1, 4};
+    Solution s;
+    cout << s.isArraySpecial(v);
+}
